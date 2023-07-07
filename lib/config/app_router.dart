@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:sundevs/dio/connectionprovider.dart';
 import 'package:sundevs/screens/screens.dart';
+import 'package:sundevs/widget/custom_appbar.dart';
 
 class AppRouter {
   static Route onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
       case '/':
-        return HomeScreen.route();
+        return WaitingScreen.route();
       case ComicScreen.routeName:
         return ComicScreen.route();  
+      case WaitingScreen.routeName:
+        return WaitingScreen.route();    
       default:
         return _errorRoute();
     }
@@ -16,11 +20,9 @@ class AppRouter {
   static Route _errorRoute() {
     return MaterialPageRoute(
       settings: const RouteSettings(name: '/error'),
-      builder: (_) => Scaffold(
-        appBar: AppBar(
-          title: const Text('Error'),
-        ),
-        body: const Center(
+      builder: (_) => const Scaffold(
+        appBar: CustomAppBar(),
+        body: Center(
           child: Text('Something went wrong!'),
         ),
       ),

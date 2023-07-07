@@ -5,7 +5,7 @@ import 'package:sundevs/widget/custom_appbar.dart';
 import '/blocs/blocs.dart';
 
 class HomeScreen extends StatelessWidget {
-  static const String routeName = '/';
+  static const String routeName = '/home';
 
   const HomeScreen({super.key});
 
